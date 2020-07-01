@@ -59,8 +59,11 @@ const { type } = args;
 delete args.type;
 
 // 执行脚手架，开启项目构建程序
-run({
-  name,
-  type,
-  args,
-});
+(async () => {
+  await run({
+    name,
+    type,
+    args,
+  });
+  process.exit(0);
+})();
